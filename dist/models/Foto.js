@@ -1,5 +1,5 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var _sequelize = require('sequelize'); var _sequelize2 = _interopRequireDefault(_sequelize);
-var _appConfigjs = require('../config/appConfig.js'); var _appConfigjs2 = _interopRequireDefault(_appConfigjs);
+var _appConfig = require('../config/appConfig'); var _appConfig2 = _interopRequireDefault(_appConfig);
 
  class Foto extends _sequelize.Model {
   static init(sequelize) {
@@ -9,7 +9,7 @@ var _appConfigjs = require('../config/appConfig.js'); var _appConfigjs2 = _inter
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo nome é obrigatório',
+            msg: 'Campo não pode ficar vazio.',
           },
         },
       },
@@ -18,14 +18,14 @@ var _appConfigjs = require('../config/appConfig.js'); var _appConfigjs2 = _inter
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo nome é obrigatório',
+            msg: 'Campo não pode ficar vazio.',
           },
         },
       },
       url: {
         type: _sequelize2.default.VIRTUAL,
         get() {
-          return `${_appConfigjs2.default.url}/images/${this.getDataValue('filename')}`;
+          return `${_appConfig2.default.url}/images/${this.getDataValue('filename')}`;
         },
       },
     }, {

@@ -1,5 +1,5 @@
-import Sequelize, { Model } from "sequelize";
-import appConfig from "../config/appConfig.js";
+import Sequelize, { Model } from 'sequelize';
+import appConfig from '../config/appConfig';
 
 export default class Foto extends Model {
   static init(sequelize) {
@@ -9,7 +9,7 @@ export default class Foto extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo nome é obrigatório',
+            msg: 'Campo não pode ficar vazio.',
           },
         },
       },
@@ -18,7 +18,7 @@ export default class Foto extends Model {
         defaultValue: '',
         validate: {
           notEmpty: {
-            msg: 'Campo nome é obrigatório',
+            msg: 'Campo não pode ficar vazio.',
           },
         },
       },

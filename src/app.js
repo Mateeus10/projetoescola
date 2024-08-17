@@ -15,7 +15,7 @@ dotenv.config();
 
 const corsOptions = {
   origin: ['http://localhost:3000', ' https://projetoescola-d0ob.onrender.com',
-    'https://front-escola-hwjg.vercel.app',
+    'https://front-escola-hwjg.vercel.app', 'http://localhost:3001',
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos (opcional)
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -32,10 +32,10 @@ class App {
 
   middlewares() {
     this.app.use(cors(corsOptions));
-    this.app.use(helmet());
+    this.app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
-    this.app.use(express.static(resolve(__dirname, 'uploads')));
+    this.app.use('/images/', express.static(resolve(__dirname, '..', 'uploads', 'images')));
   }
 
   routes() {

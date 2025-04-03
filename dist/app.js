@@ -14,7 +14,7 @@ var _userRoutesjs = require('./routes/userRoutes.js'); var _userRoutesjs2 = _int
 _dotenv2.default.config();
 
 const corsOptions = {
-  origin: ['http://localhost:3000', ' https://projetoescola-d0ob.onrender.com',
+  origin: ['http://localhost:3001', ' https://projetoescola-d0ob.onrender.com',
     'https://front-escola-phi.vercel.app', 'http://localhost:3010',
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos (opcional)
